@@ -10,8 +10,58 @@
     <h1>Найди себе друга!</h1>
 
     <form action="/pets/orders" method="post">
+        <label>
+            Тип животного
+            <select name="petType">
+                <option>Кот</option>
+                <option>Собака</option>
+                <option>Рыба</option>
+                <option>Черепаха</option>
+                <option>Ящерица</option>
+            </select>
+        </label>
 
-        <input type="submit" value="Save" name="save" />
+        <label>
+            <input type="radio" name="gender" value="male" checked> Мужчина
+        </label>
+        <label>
+            <input type="radio" name="gender" value="female"> Женщина
+        </label>
+        <label>
+            <input type="radio" name="gender" value="none"> Не решил еще
+        </label>
+
+
+
+        <label>
+            Цвет твоего животного
+            <input type="color" value="black" name="eyeColor" />
+        </label>
+
+        <label>
+            <input type="submit" value="Save" name="save" />
+        </label>
+
+        <label>
+            Длинна хвоста
+            <input type="range" min="0" max="10" value="0" name="tailLength" step="1" list="tailLengthSm"
+                   oninput="this.nextElementSibling.value = this.value">
+            <output>0</output>
+        </label>
+        <datalist id="tailLengthSm">
+            <option value="0 см"></option>
+            <option value="1 см"></option>
+            <option value="2 см"></option>
+            <option value="3 см"></option>
+            <option value="4 см"></option>
+            <option value="5 см"></option>
+            <option value="6 см"></option>
+            <option value="7 см"></option>
+            <option value="8 см"></option>
+            <option value="9 см"></option>
+            <option value="10 см"></option>
+        </datalist>
+
     </form>
 
 </main>
